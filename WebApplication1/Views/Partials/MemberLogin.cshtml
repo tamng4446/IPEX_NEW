@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<WebApplication1.Models.LoginModel>
+@{
+    ViewBag.Title = "MemberLogin";
+}
+<style>
+    .form-control {
+        border-radius: 6px !important;
+        box-shadow: none;
+        transition: none;
+        padding: 0px 2px !important;
+        height: 40px;
+    }
+</style>
+<div class="text-left texthome sectionLogin">
+    @{ if (!Umbraco.MemberIsLoggedOn())
+        {
+            using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "login" }))
+            {
+                <h3 class="font-weight-bold">Create an account</h3>
+
+                @Html.LabelFor(m => m.Username)
+                @Html.TextAreaFor(m => m.Username, new
+                {
+                    placeholder = "Username",
+                         @class = "input-width form-control"
+                })
+
+                @Html.LabelFor(m => m.Password)<br />
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Password", type = "password", id = "password-field", @class = "form-control input-width" }) <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span><br />
+                @Html.ValidationSummary()
+                <button class="btn btn-lg btn-primary btn-block buttonStartHome " name="login" id="login" type="submit">Login</button>
+
+            }
+        }
+        else
+        {
+
+        }
+    }
+</div>
+<div style="margin-top:20px; text-align:center; font:16px;"> <label>New User?</label> <a href="/Register">Create New Account</a></div>

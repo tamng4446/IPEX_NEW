@@ -1,0 +1,311 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.YourBussiness>
+	@using ContentModels = Umbraco.Web.PublishedModels;
+	@{
+	Layout = "master.cshtml";
+	var image = Model.Value<IPublishedContent>
+		("SiteLogo");
+		}
+		<style>
+			.w3-blue {
+				height: 1px;
+				width: 80%;
+				background-color: #007F9C !important;
+			}
+
+			h3 {
+				margin: 0px;
+			}
+
+			.input-width {
+				width: 100%;
+			}
+
+			#buttonStartHome {
+				width: 100%;
+			}
+
+			.field-icon {
+				margin-right: 6px;
+			}
+
+			.btn-outline-primary {
+				width: 100%;
+			}
+
+			.header {
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+
+			#slider_1 {
+				margin: 1em 0;
+			}
+
+			.ui-widget-header {
+				background: none;
+			}
+
+			.red .ui-slider-handle {
+				background-color: #ff0000;
+			}
+
+			.ui-widget-header {
+				background: none;
+			}
+
+			.w3-blue {
+				width: 100%;
+			}
+
+			.red .ui-slider-range {
+				background-color: #ff0000;
+			}
+
+			.btn-outline-primary {
+				color: black;
+			}
+            .border-IPE1 {
+                height: 94px;
+                padding: 12px; 
+                border: 1px solid #0094ff !important;
+                border-radius: 20px;
+                border-style: solid none;
+                text-align: center;
+            }
+		</style>
+		<div class="text-left" style="margin-left:37px; margin-right:37px; ">
+			<div class="header row" id="myHeader" style="margin-bottom:28.5px">
+				<div style="display:flex; margin-left:15px;">
+					<div style="margin-top:50px;">
+						<img width="50" height="50" src="@image.Url" />
+
+					</div>
+					<div style="margin-top:75px; margin-left:20px;">
+						<p>Your Business</p>
+					</div>
+				</div>
+				<div class="w3-blue row" style="margin-left:15px;">
+					<div id="myBar" class="w3-container w3-center" style="width: 20%;
+        background-color: #007F9C;
+        height: 4px"></div>
+				</div>
+			</div>
+			<div style="margin-top:20px">
+				<div><h3>@Model.Header</h3></div><br />
+				<div><p>@Model.Des1</p></div>
+
+				<label class="font-weight-bold">Email Address</label><br />
+				<input placeholder="Email Address" type="text" class="input-width form-control" /><br />
+
+				<label class="font-weight-bold">Password &nbsp; </label><br />
+				<input id="password-field" placeholder="Password" type="password" class="form-control input-width"> <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span><br />
+
+				<div><small>@Model.Des2</small></div>
+				<label class="font-weight-bold">Your Business Name</label><br />
+				<input placeholder="Business Name" type="text" class="input-width form-control" /><br />
+				<label class="font-weight-bold">
+					Your Business Sector & Subsector
+				</label><br />
+				<small>Please select one sector & subsector.</small>
+				<div style="text-align:center">
+					<button type="button" class="btn btn-outline-primary btnCreate "> Creative</button>
+					<div class="tableCreative" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Createtive">
+								<td class="border-IPE">Advertising & Media Services</td>
+								<td class="border-IPE">TV, Broadcast, Radio & Cable</td>
+								<td class="border-IPE">Visual Comms & Design</td>
+								<td class="border-IPE">Publishing, Books & Magazines</td>
+							</tr>
+							<tr class="tr2Createtive">
+								<td class="border-IPE">Fashion Design</td>
+								<td class="border-IPE">Interior Design</td>
+								<td class="border-IPE">ISPs</td>
+								<td class="border-IPE">Performing Arts</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnConsumer "> Consumer Goods</button>
+                    <div class="tableConsumer" style="overflow-x:auto; display:none ">
+                        <table style=" border-collapse: separate; border-spacing: 10px 10px;">
+                            <tr class="tr1Consumer">
+                                <td class="border-IPE">Auto Products & Parts</td>
+                                <td class="border-IPE">Household Home & Personal Care</td>
+                                <td class="border-IPE">Leisure Goods & Toys</td>
+                                <td class="border-IPE">Apparel and Footwear & Fashion Design</td>
+                                <td class="border-IPE">Foods,Beverages & Tobacco</td>
+                            </tr>
+
+                        </table>
+                    </div>
+					<button type="button" class="btn btn-outline-primary btnConsumerServices d-none">Consumer Services</button>
+					<div class="tableConsumerServices " style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1ConsumerServices">
+								<td class="border-IPE">Tourism, Hotels & Leisure</td>
+								<td class="border-IPE">Restaurant Warung & Culinary</td>
+								<td class="border-IPE">Education</td>
+								<td class="border-IPE">Online Sellers, Retail & Shops</td>
+
+							</tr>
+
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnIT "> IT</button>
+					<div class="tableIT" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1IT">
+								<td class="border-IPE">IT Services</td>
+								<td class="border-IPE">Software</td>
+								<td class="border-IPE">IT Hardware & Equipment and Components</td>
+								<td class="border-IPE">Consumer Electronics & Phones</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnCommercial"> Commercial & Professional Services</button>
+					<div class="tableCommercial" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Commercial">
+								<td class="border-IPE">Trading Companies & Distributors</td>
+								<td class="border-IPE">Commercial Services & Supplies</td>
+								<td class="border-IPE">Professional Services</td>
+
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnHealth "> Health</button>
+					<div class="tableHealth" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Health">
+								<td class="border-IPE">Medical Equipment</td>
+								<td class="border-IPE">Medical Services</td>
+								<td class="border-IPE">Pharma Products</td>
+								<td class="border-IPE">Healthcare Products</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnIndustrials "> Industrials</button>
+					<div class="tableIndustrials" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Industrials">
+								<td class="border-IPE">Aerospace & Defense</td>
+								<td class="border-IPE">Building Products</td>
+								<td class="border-IPE">Construction & Engineering</td>
+								<td class="border-IPE">Electrical Equipment</td>
+								<td class="border-IPE">Industrial Conglomerates</td>
+								<td class="border-IPE">Machinery</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnMaterials "> Materials</button>
+					<div class="tableMaterials" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Materials">
+								<td class="border-IPE">Chemicals</td>
+								<td class="border-IPE">Contrustion</td>
+								<td class="border-IPE">Packaging</td>
+								<td class="border-IPE">Metals, Mining & Forestry</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnEnergy "> Energy</button>
+					<div class="tableEnergy" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Energy">
+								<td class="border-IPE">Oilt</td>
+								<td class="border-IPE">Gas</td>
+								<td class="border-IPE">Renewables</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnTransport "> Transport</button>
+					<div class="tableTransport" style="overflow-x:auto; display:none">
+						<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+							<tr class="tr1Transport">
+								<td class="border-IPE">Air,Sea,Land,Transport(Passenger & Freight)</td>
+								<td class="border-IPE">Transport Infrastructure</td>
+							</tr>
+						</table>
+					</div>
+					<button type="button" class="btn btn-outline-primary btnReal "> Real Estate</button>
+					<button type="button" class="btn btn-outline-primary btnUtilities "> Utilities</button>
+				</div>
+				<div style="margin-right:37px;">
+					<label class="font-weight-bold">
+						Your Role in the Business
+					</label><br />
+					<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+						<tr class="tr1Role">
+							<td class="border-IPE1">Director</td>
+							<td class="border-IPE1">Owner</td>
+							<td class="border-IPE">Employee</td>
+						</tr>
+					</table>
+					<label class="font-weight-bold">
+						How is Your Business Funded?
+					</label><br />
+					<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+						<tr class="tr1Funded">
+							<td class="border-IPE1">Profits & Cashflow</td>
+							<td class="border-IPE1">Bank Lending</td>
+							<td class="border-IPE1">Venture Capital</td>
+						</tr>
+					</table>
+
+				</div>
+				<div class="calc_main_Wrap">
+					<label class="font-weight-bold">
+						How Many Years Trading?
+					</label><br />
+					<div class="range-slider">
+						<div class="wrapper_Ranger">
+							<input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="1000000">
+							<small>0</small>
+							<small style="margin-left: 112px;">5</small>
+							<small style="margin-left: 112px;">10+</small>
+						</div>
+					</div>
+
+
+				</div>
+				<label class="font-weight-bold">Your Gender</label><br />
+				<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+					<tr class="trGender">
+						<td class="border-IPE">Male</td>
+						<td class="border-IPE">Female</td>
+
+					</tr>
+				</table>
+				<label class="font-weight-bold">Your Trading Region</label><br />
+				<table style=" border-collapse: separate; border-spacing: 10px 10px;">
+					<tr class="trRegion">
+						<td class="border-IPE">Indonesia</td>
+						<td class="border-IPE">Indonesia & Abroad</td>
+					</tr>
+				</table>
+			</div>
+			<button>Previous</button>
+			<button>Continue</button>
+			@*padding table*@
+		</div>
+		<script>
+
+    window.onscroll = function () { myFunction() };
+
+    var header = document.getElementById("myHeader");
+
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+
+            header.style.opacity = "0.7";
+        } else {
+            header.classList.remove("sticky");
+            header.style.opacity = "1";
+        }
+    }
+
+		</script>

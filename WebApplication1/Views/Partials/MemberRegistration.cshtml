@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<WebApplication1.Models.RegisterModel>
+    <style>
+        .form-control {
+            border-radius: 6px !important;
+            box-shadow: none;
+            transition: none;
+            padding: 0px 2px !important;
+            height:40px;
+        }
+    </style>
+    <div class="text-left texthome sectionLogin">
+        @{ if (!Umbraco.MemberIsLoggedOn())
+            {
+                using (Html.BeginUmbracoForm("SubmitRegistration", "Member", System.Web.Mvc.FormMethod.Post, new { id = "register" }))
+                {
+                    <h3 class="font-weight-bold">Create an account</h3>
+
+                    @Html.LabelFor(m => m.Name)
+                    @Html.TextAreaFor(m => m.Name, new { placeholder = "Name", @class = "input-width form-control" })
+                   
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextAreaFor(m => m.Email, new
+                    {
+                        placeholder = "Email",
+                             @class = "input-width form-control"
+                    })
+                 
+                    @Html.LabelFor(m => m.Password)<br />
+                    @Html.PasswordFor(m => m.Password, new { placeholder = "Password", type = "password", id = "password-field", @class = "form-control input-width" }) <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span><br />
+                    @Html.ValidationSummary()
+                    <button class="btn btn-lg btn-primary btn-block buttonStartHome " name="register" id="register" type="submit">Sign Up</button>
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+    </div>
+<div style="margin-top:20px; text-align:center; font:16px;"> <label>Already have an account? </label> <a href="/Login">Sign In?</a></div>
+
+
+@* the fun starts here *@
+
+
+
+
+
