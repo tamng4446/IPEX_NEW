@@ -200,7 +200,11 @@ body .theme-font-serif p {
 }
 
 .active {
-  color: #007F9C;
+  background-color: #007F9C;
+}
+
+header .table td {
+  border: none;
 }
 
 /*# sourceMappingURL=Page_Style.css.map */
