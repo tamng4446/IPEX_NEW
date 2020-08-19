@@ -328,6 +328,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\Page_Style.css" />
+    <Content Include="Scripts\umbraco-starterkit-app.js" />
     <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -389,6 +390,7 @@
     <Content Include="Views\AboutIntangibles.cshtml" />
     <Content Include="Views\YourBussiness.cshtml" />
     <Content Include="Views\IntellectualProperty.cshtml" />
+    <Content Include="Views\Master.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

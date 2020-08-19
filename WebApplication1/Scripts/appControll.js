@@ -45,18 +45,18 @@ for (let i = 0; i < eltr1Role.length; i++) {
     eltr1Role[i].onclick = function () {
         var c = 0;
         while (c < eltr1Role.length) {
-            eltr1Role[c++].className = 'border-IPE';
+            eltr1Role[c++].className = 'border-IPE1';
         }
-        eltr1Role[i].className = 'border-IPE active';
+        eltr1Role[i].className = 'border-IPE1 active';
     };
 }
 for (let i = 0; i < eltr1Funded.length; i++) {
     eltr1Funded[i].onclick = function () {
         var c = 0;
         while (c < eltr1Funded.length) {
-            eltr1Funded[c++].className = 'border-IPE';
+            eltr1Funded[c++].className = 'border-IPE1';
         }
-        eltr1Funded[i].className = 'border-IPE active';
+        eltr1Funded[i].className = 'border-IPE1 active';
     };
 }
 for (let i = 0; i < eltr1Commercial.length; i++) {

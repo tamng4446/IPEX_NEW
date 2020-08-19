@@ -125,20 +125,6 @@ body .theme-font-serif p {
   box-sizing: border-box;
 }
 
-.calc_main_Wrap {
-  margin: 75px auto;
-  width: auto;
-  max-width: 600px;
-  text-align: center;
-}
-.calc_main_Wrap h1 {
-  font-size: 25px;
-}
-
-.range-slider {
-  margin: 45px 0;
-}
-
 .wrapper_Ranger {
   border: 1px solid #E1E1E1;
   padding: 5px;
